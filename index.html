@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wrong Door</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo" onclick="goHome()">✳ THE WRONG DOOR</a>
+  <span class="saved">● YOUR PROGRESS IS SAVED</span>
+</header>
+
+<main>
+  <section id="home" class="page active">
+    <div class="eyebrow">THE CAIE STUDY UNIVERSE</div>
+    <h1>Curiosity opens<br>
+      <span>the wrong door.</span>
+    </h1>
+    <p class="intro">
+      Every subject is a new world.
+      Every question is a new discovery.
+      Are you ready to explore?
+    </p>
+
+    <button class="main-btn" onclick="showPage('subjects')">
+      ENTER THE UNIVERSE ↗
+    </button>
+
+    <div class="doors">
+      <button class="door pink" onclick="openSubject('Biology')">
+        <span>01</span><b>✿</b>
+        <strong>THE LIVING LAB</strong>
+        <small>Biology</small>
+      </button>
+      <button class="door blue" onclick="openSubject('Mathematics')">
+        <span>02</span><b>∑</b>
+        <strong>THE NUMBER VAULT</strong>
+        <small>Mathematics</small>
+      </button>
+      <button class="door orange" onclick="openSubject('Chemistry')">
+        <span>03</span><b>⚗</b>
+        <strong>THE ELEMENT ROOM</strong>
+        <small>Chemistry</small>
+      </button>
+      <button class="door green" onclick="openSubject('Physics')">
+        <span>04</span><b>⌁</b>
+        <strong>THE FORCE FIELD</strong>
+        <small>Physics</small>
+      </button>
+    </div>
+
+    <p class="footnote">
+      NO AI. JUST YOUR CURIOSITY AND YOUR NEXT CHALLENGE.
+    </p>
+  </section>
+
+  <section id="subjects" class="page">
+    <button class="back" onclick="showPage('home')">← Back home</button>
+    <div class="eyebrow">CHOOSE YOUR PATH</div>
+    <h2>Which world are<br>you walking into?</h2>
+    <p class="muted">Choose a subject to explore its topics and quizzes.</p>
+
+    <label for="level">YOUR QUALIFICATION</label>
+    <select id="level">
+      <option>Cambridge IGCSE</option>
+      <option>Cambridge O Level</option>
+      <option>Cambridge International AS & A Level</option>
+    </select>
+
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
+
+  <section id="topics" class="page">
+    <button class="back" onclick="showPage('subjects')">← All subjects</button>
+    <div class="eyebrow">YOUR NEXT ADVENTURE</div>
+    <h2 id="subjectTitle">Biology</h2>
+    <p class="muted">Choose a topic and start your challenge.</p>
+    <div id="topicList" class="topic-list"></div>
+    <button class="main-btn" onclick="startMixed()">
+      ✦ SURPRISE ME
+    </button>
+    <p id="progressText" class="muted"></p>
+  </section>
+
+  <section id="quiz" class="page">
+    <button class="back" onclick="showPage('topics')">← Exit quiz</button>
+    <div class="quiz-top">
+      <span id="quizLabel">BIOLOGY</span>
+      <span id="scoreLabel">SCORE: 0</span>
+    </div>
+    <div class="progress-track">
+      <div id="progressBar"></div>
+    </div>
+    <p id="questionNumber" class="eyebrow">QUESTION 1</p>
+    <h2 id="question">Your question goes here.</h2>
+    <div id="answers" class="answers"></div>
+    <div id="feedback" class="feedback"></div>
+    <button id="nextBtn" class="main-btn" disabled onclick="nextQuestion()">
+      CHECK ANSWER ↗
+    </button>
+  </section>
+
+  <section id="results" class="page">
+    <div class="eyebrow">CHALLENGE COMPLETE</div>
+    <h2 id="resultTitle">Another door opened.</h2>
+    <div id="finalScore" class="final-score">0/0</div>
+    <p id="resultMessage" class="muted"></p>
+    <button class="main-btn" onclick="retryQuiz()">TRY AGAIN ↻</button>
+    <button class="back" onclick="openSubject(currentSubject)">
+      CHOOSE ANOTHER TOPIC →
+    </button>
+    <p id="savedResults" class="muted"></p>
+  </section>
+</main>
+
+<footer>THE WRONG DOOR © 2026 · MADE FOR CURIOUS MINDS ✳</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
